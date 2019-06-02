@@ -1,0 +1,211 @@
+<body class="b">
+    <div class="row">
+        <div class="col-sm-12">
+        <mat-toolbar style="background-color:#2b244d; ;color:white;font-family:cursive;">
+<button mat-button (click)="sidenav.open ()"><mat-icon>menu</mat-icon></button>
+<h3 style="margin-right: 350px;font-family: cursive">THE TREE</h3>
+<span style="margin-right: 550px">News Headlines</span>  
+<span class="example-spacer"></span>
+<button mat-button [matMenuTriggerFor]="appMenu"><mat-icon>settings</mat-icon></button>
+</mat-toolbar>
+
+<mat-menu #appMenu="matMenu">
+<a  href="#" routerLink="/"><button  style="background-color:#2b244d;color:white;font-family:cursive;margin:0px" mat-menu-item> Logout </button></a>
+</mat-menu>
+
+<mat-sidenav-container class="example-container">
+<mat-sidenav style="background: linear-gradient(#2b244d,#7611f9);" #sidenav class="example-sidenav">
+<mat-list class="list-nav">
+<mat-list-item class="list-item" *ngFor="let source of mSources" (click)="searchArticles(source.id);sidenav.close();">
+<div mat-card-avatar [ngStyle]="{'background-image': 'url(../assets/images/'+ source.id +'.png)'}" class="example-header-image"></div><span class="source-name"> {{source.name}}</span>
+</mat-list-item>
+</mat-list>
+</mat-sidenav>
+
+<div class="row">
+<div class="col-sm-1.5"style="margin-left:15%;margin-right:0px;padding-right: 0px">
+<div class="dropdown" style="margin-right:0px;padding-right:0px">
+<button class="btn btn-outline-light dropdown-toggle" style="margin-right:0px;"type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+Category
+</button>
+<ul class="dropdown-menu"  aria-labelledby="dropdownMenu2" style="background-color:#2b244d;border:2px,dotted,white;">
+<li class="dropdown-item"style="color:white;font-family:cursive" (click)="searchArti()">
+Business
+</li>
+<li class="dropdown-item" style="color:white;font-family:cursive"(click)="searchArti1()">
+Sports
+</li>
+<li class="dropdown-item"style="color:white;font-family:cursive" (click)="searchArti2()">
+Health
+</li>
+<li class="dropdown-item" style="color:white;font-family:cursive"(click)="searchArti3()">
+General
+</li>
+<li class="dropdown-item" style="color:white;font-family:cursive"(click)="searchArti4()">
+Science
+</li>
+<li class="dropdown-item" style="color:white;font-family:cursive"(click)="searchArti5()">
+Entertainment
+</li>
+<li class="dropdown-item" style="color:white;font-family:cursive"(click)="searchArti6()">
+Technology
+</li>
+</ul> 
+</div></div>
+
+
+
+<div class="col-sm-5" style="margin-left:0px;margin-right:0px;padding-left:0px;padding-right: 0px">
+<div class="input-group mb-3">    
+        <input type="input"#query class="form-control"  id="inputPassword" placeholder="search">
+        <div class="input-group-append">
+        <button class="btn btn-outline-light" type="submit" id="button-addon2" (click)="search(query.value)">Go</button>
+        </div></div>
+</div>
+
+
+
+
+<div class="col-sm-1.5"style="margin-left:0px;margin-right:0px;padding-right: 0px;padding-left:0px">
+<div class="dropdown" style="padding-right: 0px;margin-right: 0px;">
+<button class="btn btn-outline-light dropdown-toggle" style="margin-right:0px;margin-left: 0px"type="button" id="dropdownMenu3" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+Language
+</button>
+<ul  class="dropdown-menu"  aria-labelledby="dropdownMenu3" style="background-color:#2b244d;border:2px,dotted,white;">
+<li class="dropdown-item"style="color:white;font-family:cursive" (click)="searchAr()">
+English
+</li>
+<li class="dropdown-item" style="color:white;font-family:cursive"(click)="searchAr1()">
+Arabic
+</li>
+<li class="dropdown-item"style="color:white;font-family:cursive" (click)="searchAr2()">
+German
+</li>
+<li class="dropdown-item" style="color:white;font-family:cursive"(click)="searchAr3()">
+French
+</li>
+<li class="dropdown-item" style="color:white;font-family:cursive"(click)="searchAr4()">
+Dutch
+</li>
+<li class="dropdown-item" style="color:white;font-family:cursive"(click)="searchAr5()">
+Hebrew
+</li>
+<li class="dropdown-item" style="color:white;font-family:cursive"(click)="searchAr6()">
+Italian
+</li>
+<li class="dropdown-item" style="color:white;font-family:cursive"(click)="searchAr7()">
+Norwegian
+</li>
+<li class="dropdown-item" style="color:white;font-family:cursive"(click)="searchAr8()">
+Portuguese
+</li>
+<li class="dropdown-item" style="color:white;font-family:cursive"(click)="searchAr9()">
+Russian
+</li>
+<li class="dropdown-item" style="color:white;font-family:cursive"(click)="searchAr10()">
+Chinese
+</li>
+</ul></div></div>
+<div class="col-sm-1.5" style="margin-left:0px;margin-right:0px;padding-right: 0px;padding-left:0px">
+<div class="dropdown">
+<button class="btn btn-outline-light dropdown-toggle" style="margin-right:0px;margin-left:0px;"type="button" id="dropdownMenu4" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+Country
+</button>
+<ul class="dropdown-menu"  aria-labelledby="dropdownMenu4" style="background-color:#2b244d;border:2px,dotted,white;">
+<li class="dropdown-item" style="color:white;font-family:cursive" (click)="searchArt()">
+India
+</li>
+<li class="dropdown-item" style="color:white;font-family:cursive"(click)="searchArt1()">
+USA
+</li>
+<li class="dropdown-item"style="color:white;font-family:cursive" (click)="searchArt2()">
+Japan
+</li>
+<li class="dropdown-item"style="color:white;font-family:cursive" (click)="searchArt3()">
+Argentina
+</li>
+<li class="dropdown-item" style="color:white;font-family:cursive"(click)="searchArt4()">
+China
+</li>
+<li class="dropdown-item" style="color:white;font-family:cursive"(click)="searchArt5()">
+Arab Emirates
+</li>
+<li class="dropdown-item"style="color:white;font-family:cursive" (click)="searchArt6()">
+South Africa
+</li>
+<li class="dropdown-item" style="color:white;font-family:cursive"(click)="searchArt7()">
+New Zealand
+</li>
+<li class="dropdown-item"style="color:white;font-family:cursive" (click)="searchArt8()">
+Australia
+</li>
+<li class="dropdown-item" style="color:white;font-family:cursive"(click)="searchArt9()">
+Egypt
+</li>
+<li class="dropdown-item"style="color:white;font-family:cursive" (click)="searchArt10()">
+Russia
+</li>
+<li class="dropdown-item" style="color:white;font-family:cursive" (click)="searchArt11()">
+Austria
+</li>
+<li class="dropdown-item" style="color:white;font-family:cursive"(click)="searchArt12()">
+Belgium
+</li>
+<li class="dropdown-item"style="color:white;font-family:cursive" (click)="searchArt13()">
+Bulgaria
+</li>
+<li class="dropdown-item"style="color:white;font-family:cursive" (click)="searchArt14()">
+Brazil
+</li>
+<li class="dropdown-item" style="color:white;font-family:cursive"(click)="searchArt15()">
+Canada
+</li>
+    <li class="dropdown-item" style="color:white;font-family:cursive"(click)="searchArt16()">
+        Colombia
+    </li>
+    <li class="dropdown-item"style="color:white;font-family:cursive" (click)="searchArt17()">
+        Cuba
+    </li>
+    <li class="dropdown-item" style="color:white;font-family:cursive"(click)="searchArt18()">
+        Czech Republic
+    </li>
+    <li class="dropdown-item"style="color:white;font-family:cursive" (click)="searchArt19()">
+        Germany
+    </li>
+    <li class="dropdown-item" style="color:white;font-family:cursive"(click)="searchArt20()">
+        France
+    </li>
+    <li class="dropdown-item"style="color:white;font-family:cursive" (click)="searchArt21()">
+        Great Britain
+    </li>
+    <li class="dropdown-item"style="color:white;font-family:cursive" (click)="searchArt22()">
+        Greece
+    </li>
+</ul> 
+</div></div>
+</div>
+<div class="row" style="margin-top:0px">
+<div class="col-sm-9" style="margin-left:100px">
+<mat-card class="example-card"  *ngFor="let article of mArticles"style="background-color:#2b244d;color:white;font-family:cursive;">
+<mat-card-header>
+<div mat-card-avatar [ngStyle]="{'background-image': 'url(../assets/images/'+ article.source.id +'.png)'}" class="example-header-image"></div>
+<mat-card-title class="title">{{article.title}}</mat-card-title>
+<mat-card-subtitle>{{article.source.name}}</mat-card-subtitle>
+</mat-card-header>
+<img mat-card-image class="img-article" src={{article.urlToImage}} alt="">
+<mat-card-content>
+<p>
+{{article.description}}
+</p>
+</mat-card-content>
+<mat-card-actions class="action-buttons">
+<a mat-button color="primary"style="font-family:cursive;color:white" href={{article.url}} target="_blank" ><mat-icon>visibility</mat-icon> More</a>
+</mat-card-actions>
+</mat-card>
+</div>
+</div>
+
+
+</mat-sidenav-container>
+</div></div>
+</body>

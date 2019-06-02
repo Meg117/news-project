@@ -1,0 +1,25 @@
+
+body{
+    overflow-x:hidden;
+}
+.c{
+    font-family: cursive;
+    color:white;
+}
+
+.d1 {
+    margin-left: 350px;
+    margin-right:350px;
+  }
+  
+  @media only screen and (max-width: 600px) {
+.d1 {
+    margin-left: auto;
+    margin-right:auto;
+    }
+  }
+  .j{
+      
+     margin-right:0px;
+  }
+ 

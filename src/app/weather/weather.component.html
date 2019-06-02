@@ -1,0 +1,87 @@
+<body class="b">
+        <mat-toolbar style="background-color:#2b244d; ;color:white;font-family:cursive;">
+        
+        <h3 style="margin-right: 450px;font-family: cursive">THE TREE</h3>
+        <span style="margin-right: 550px">Weather News</span>  
+        <span class="example-spacer"></span>
+        <button mat-button [matMenuTriggerFor]="appMenu"><mat-icon>settings</mat-icon></button>
+        </mat-toolbar>
+        
+        <mat-menu #appMenu="matMenu">
+        <a  href="#" routerLink="/"><button  style="background-color:#2b244d;color:white;font-family:cursive;margin:0px" mat-menu-item> Logout </button></a>
+        </mat-menu>
+        <div class="row">
+        <div class="col-sm-2" style="margin-left:0px;margin-right:0px;padding-left:0px;padding-right: 0px">
+                <a  href="#" routerLink="/dashboard">
+                    <button class="btn btn-outline-light" style="width:197px;margin-right:0px;margin-left: 0px">Dashboard</button>
+                </a>
+            </div>
+            <div class="col-sm-6" style="margin-left:0px;margin-right:0px;padding-left:0px;padding-right: 0px">
+                <div class="input-group mb-3">    
+                        <input type="input"#query class="form-control" style="width:527px" id="inputPassword" placeholder="search">
+                        <div class="input-group-append">
+                        <button class="btn btn-outline-light" type="submit" id="button-addon2" (click)="search(query.value)">Go</button>
+                        </div></div>
+                </div>
+            </div>
+            <div class="row" style="margin-top:0px">
+                    <div class="col-sm-3" >         
+                        <mat-card class="example-card" style="background-color:#2b244d;color:white;font-family:cursive;">
+                            <mat-card-header>
+                           
+                            <mat-card-title class="title">Current</mat-card-title>
+                            <mat-card-subtitle style="font-family: cursive;color: white">{{mLocations.name}}</mat-card-subtitle>
+                            </mat-card-header>
+                            <img class="img-article" src={{mCurrents.condition.icon}} alt="" style="width:137px;height:137px">
+                            <mat-card-content>
+                                <p>Temperature(Celcius):  {{mCurrents.temp_c}}</p>
+                                <p>Temperature(Fahrenheit): {{mCurrents.temp_f}}</p>
+                                <p>Weather: {{mCurrents.condition.text}}</p>
+                            </mat-card-content>
+                           
+                            </mat-card>                                
+                    </div>
+                    <div class="col-sm-3">         
+                        <mat-card class="example-card" style="background-color:#2b244d;color:white;font-family:cursive;">
+                           
+                            <mat-card-title class="title">Location Details</mat-card-title>
+                            
+                            <mat-card-content>
+                                <p>Country:{{mLocations.country}}</p>
+                                <p>Latitude: {{mLocations.lat}}</p>
+                                <p>Longitude: {{mLocations.lon}}</p>
+                                <p>Localtime:{{mLocations.localtime}}</p>
+                                <p>Time Zone:{{mLocations.tz_id}}</p>
+                                <p>Region: {{mLocations.region}}</p>
+                                <p>Humidity:{{mCurrents.humidity}}</p>
+                                <p>Cloud: {{mCurrents.cloud}}</p>
+                                <p>Wind Direction: {{mCurrents.wind_dir}}</p>
+                                <p>Pressure: {{mCurrents.pressure_in}}</p>
+
+                            </mat-card-content>
+                           
+                            </mat-card>                                
+                    </div>
+                    <div class="col-sm-3">
+                    <mat-card class="example-card" style="background-color:#2b244d;color:white;font-family:cursive;">
+                        <mat-card-header>
+                       
+                        <mat-card-title class="title">Forecast</mat-card-title>
+                        <mat-card-subtitle style="font-family: cursive;color: white">{{mLocations.name}}</mat-card-subtitle>
+                        </mat-card-header>
+                        <img class="img-article" src={{mForecasts.forecastday.day.condition.icon}} alt="" style="width:137px;height:137px">
+                        <mat-card-content>
+                            <p>Temperature(Celcius):  {{mForecasts.maxtemp_c}}</p>
+                            <p>Temperature(Fahrenheit): {{mForecasts.temp_f}}</p>
+                            <p>Weather: {{mForecasts.condition.text}}</p>
+                        </mat-card-content>
+                       
+                        </mat-card>   
+                    </div>
+                    
+                    </div>
+                    </body>
+                
+
+
+        

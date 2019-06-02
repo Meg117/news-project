@@ -1,0 +1,56 @@
+
+body{overflow-x:hidden;
+}
+.example-card{
+    
+    margin-left: 200px;
+    width: 70%;
+    font-family: cursive;
+}
+.example-header-image { 
+    background-size: cover;
+  }
+  
+.title{
+  font-weight: bold;
+  }
+  
+  .img-article{
+      height: 350px;
+  }
+  .action-buttons{
+    text-align: center;
+    font-family: cursive;
+}
+
+.example-sidenav-content {
+    display: flex;
+    height: 75%;
+    align-items: center;
+    justify-content: center;
+font-family: cursive;
+}
+.example-sidenav {
+    padding: 20px;
+}
+
+.source-name {
+    margin-left:5px; 
+   color:white;
+   font-family: cursive;
+}
+.list-item:hover{
+    
+    color: grey;
+}
+.example-container {
+    width: 100%;
+    font-family: cursive;
+    height: auto;
+    
+    background:linear-gradient(to right,#34e89e,
+    #0f3443);
+    color:white;
+    font-family: cursive;
+}
+

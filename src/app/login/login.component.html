@@ -1,0 +1,39 @@
+<body>
+<div class="jumbotron jumbotron-fluid j"style="margin:0px;padding-top:10px; background: linear-gradient(#a8ff78,#78ffd6)">
+   <mat-toolbar style="background-color:#2b244d;color:white;font-family:cursive;">
+  <br>
+<h3 style="margin-right: 450px;font-family: cursive">THE TREE</h3>
+<span style="margin-right: 550px">Login Here!</span>  
+    <span class="example-spacer"></span>
+    <a href="#" routerLinkActive="active" routerLink="/" style="color:white"><mat-icon>home</mat-icon></a>
+    </mat-toolbar>
+    <br><br><br><br><br>
+    
+    <div class="d1">
+     
+      <form #frm="ngForm">
+    <div class="form-group">
+      
+      <input required #user=ngModel type="text"name="username" ngModel class="form-control c" id="formGroupExampleInput" placeholder="Username" [(ngModel)]="userName">
+      <div *ngIf="user.touched" class="alert alert-danger">
+          <div *ngIf="user.errors?.required" >username is required</div></div>
+    </div>
+    <div class="form-group">
+      <br>
+      <input required #pass=ngModel type="password" name="password" ngModel class="form-control c" id="exampleInputPassword1" placeholder="Password" [(ngModel)]="passWord">
+    
+    <div *ngIf="pass.touched" ><br>
+        <div *ngIf="pass.errors?.required" class="alert alert-danger">password is required</div></div><br>
+    </div><br><br>
+    <button type="submit" [disabled]="frm.invalid "style="color:white"class="btn btn-block btn-outline-light c"(click)="login(user,pass)">Login</button><br><br>
+        <br>
+    
+    </form>
+    
+    <button type="button"style="color:white;" class="btn btn-block btn-outline-light c"routerLinkActive="active" routerLink="/signup">Signup</button><br><br>
+    <a href="#" class="c"routerLinkActive="active"style="color:white" routerLink="/signup">Forgot Password?</a>
+    </div>
+  </div>
+
+
+</body>
